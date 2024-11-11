@@ -3,46 +3,82 @@ import { useInView } from "react-intersection-observer";
 
 function FeaturesSection() {
   const { ref, inView } = useInView({
-    triggerOnce: true, // Animates only once when it comes into view
-    threshold: 0.1, // Trigger when 10% of the element is in view
+    triggerOnce: true,
+    threshold: 0.1,
   });
+
+  const renderFeatureItem = (iconClass, title, description, animationClass, delayClass) => (
+    <div className={`feature-item ${inView ? `slide-in ${animationClass} ${delayClass}` : ''}`}>
+      <i className={`${iconClass} feature-icon`} aria-hidden="true"></i>
+      <h4>{title}</h4>
+      <p>{description}</p>
+    </div>
+  );
 
   return (
     <section className="features-section" ref={ref}>
-      <div className={`feature-item ${inView ? 'animate__animated animate__fadeInLeft' : ''}`}>
-        <i className="fas fa-microphone feature-icon"></i>
-        <h4>Lifelike AI Voice Agent</h4>
-        <p>Engage customers with human-like voice interactions, perfect for sales inquiries, follow-ups, and customer support, 24/7.</p>
+      <h1>Core Capabilities</h1>
+      <div className="features-group">
+        {renderFeatureItem(
+          "fas fa-microphone",
+          "Lifelike AI Voice Agent",
+          "Engage customers with natural voice interactions for sales, support, and follow-ups—available 24/7.",
+          'animate__animated animate__fadeInLeft',
+          'delay-1'
+        )}
+        {renderFeatureItem(
+          "fas fa-comments",
+          "Smart AI Chat Agent",
+          "Deliver instant, personalized chat support, handling inquiries, scheduling, and recommendations.",
+          'animate__animated animate__fadeInRight',
+          'delay-2'
+        )}
+        {renderFeatureItem(
+          "fas fa-puzzle-piece",
+          "Developer-Friendly API",
+          "Seamlessly integrate Yugaa AI into your systems with our flexible API and effortless setup.",
+          'animate__animated animate__fadeInLeft',
+          'delay-3'
+        )}
+        {renderFeatureItem(
+          "fas fa-chart-line",
+          "Advanced Analytics",
+          "Unlock insights from each interaction to optimize support and engagement strategies.",
+          'animate__animated animate__fadeInRight',
+          'delay-4'
+        )}
       </div>
-      <div className={`feature-item ${inView ? 'animate__animated animate__fadeInRight' : ''}`}>
-        <i className="fas fa-comments feature-icon"></i>
-        <h4>Intelligent AI Chat Agent</h4>
-        <p>Provide instant, customized support through chat, handling inquiries, scheduling, and personalized recommendations seamlessly.</p>
-      </div>
-      <div className={`feature-item ${inView ? 'animate__animated animate__fadeInLeft' : ''}`}>
-        <i className="fas fa-puzzle-piece feature-icon"></i>
-        <h4>Developer-Friendly API and Easy Integration</h4>
-        <p>Easily integrate Yugaa AI’s voice and chat capabilities into your existing systems. Our flexible API and zero-lift integration make setup effortless.</p>
-      </div>
-      <div className={`feature-item ${inView ? 'animate__animated animate__fadeInRight' : ''}`}>
-        <i className="fas fa-chart-line feature-icon"></i>
-        <h4>Advanced Analytics and Insights</h4>
-        <p>Gain actionable insights from every interaction with Yugaa AI’s robust analytics, helping you continuously optimize support and engagement strategies.</p>
-      </div>
-      <div className={`feature-item ${inView ? 'animate__animated animate__fadeInLeft' : ''}`}>
-        <i className="fas fa-tachometer-alt feature-icon"></i>
-        <h4>Real Results</h4>
-        <p>Increase productivity by 50%, reduce support costs by 40%, and improve response times by 70% with Yugaa AI.</p>
-      </div>
-      <div className={`feature-item ${inView ? 'animate__animated animate__fadeInRight' : ''}`}>
-        <i className="fas fa-award feature-icon"></i>
-        <h4>Trusted by Leading Brands</h4>
-        <p>“Since using Yugaa AI, we’ve seen a 30% improvement in response times and a 50% increase in customer satisfaction.” — John D., E-commerce</p>
-      </div>
-      <div className={`feature-item ${inView ? 'animate__animated animate__fadeInLeft' : ''}`}>
-        <i className="fas fa-industry feature-icon"></i>
-        <h4>Tailored to Your Industry</h4>
-        <p>Explore solutions customized for your specific industry needs.</p>
+
+      <h1>AI Solutions for Every Industry</h1>
+      <div className="features-group">
+        {renderFeatureItem(
+          "fas fa-tachometer-alt",
+          "E-Commerce",
+          "Increase sales and reduce cart abandonment with personalized AI-driven support.",
+          'animate__animated animate__fadeInLeft',
+          'delay-5'
+        )}
+        {renderFeatureItem(
+          "fas fa-award",
+          "Healthcare",
+          "Automate scheduling and wellness inquiries to enhance patient care.",
+          'animate__animated animate__fadeInRight',
+          'delay-6'
+        )}
+        {renderFeatureItem(
+          "fas fa-industry",
+          "Telecommunications",
+          "Handle high call volumes with fast responses for troubleshooting and billing.Explore solutions customized for your specific industry needs.",
+          'animate__animated animate__fadeInLeft',
+          'delay-7'
+        )}
+              {renderFeatureItem(
+          "fas fa-industry",
+          "Financial Services",
+          "Automate account management and transaction support for efficient, compliant service.",
+          'animate__animated animate__fadeInLeft',
+          'delay-7'
+        )}
       </div>
     </section>
   );

@@ -4,41 +4,63 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
 function SupportSection() {
-  const [activeButton, setActiveButton] = useState('AI Voice Agent for Sales');
 
+  const [activeButton, setActiveButton] = useState('AI Voice Agent for Sales');
   const { ref: sectionRef, inView: sectionInView } = useInView({ triggerOnce: true, threshold: 0.2 });
 
+  // Updated features array with section headings
   const features = [
+    { heading: 'Key Product Features' },
     { 
       title: 'AI Voice Agent for Sales', 
       icon: <AiOutlinePhone />, 
-      description:  "Automate personalized sales calls and lead follow-ups, guiding prospects through purchase decisions with conversational, human-like interactions.",
+      description: "Automate sales calls and follow-ups with human-like, conversational AI.",
       image: "/images/Chat-bot2.gif"
     },
     { 
-      title: 'AI Chat Agent for Customer Support', 
+      title: 'AI Chat Agent for Support', 
       icon: <AiOutlineComment />, 
-      description:  "Deliver instant, helpful responses via chat, resolving inquiries quickly and improving customer satisfaction.",
+      description: "Provide instant chat responses to resolve inquiries and boost satisfaction.",
       image: "/images/Chat-bot2.gif"
     },
     { 
-      title: 'Generative AI for Dynamic Responses', 
+      title: 'Dynamic AI Responses', 
       icon: <AiOutlineRobot />, 
-      description: "Our generative AI provides context-aware, non-scripted responses, adapting to each conversation dynamically and continuously learning from interactions.",
+      description: "Our generative AI adapts to conversations, learning and improving with each interaction.",
       image: "/images/Chat-bot2.gif"
     },
     { 
-      title: 'Sales and Support Playbooks', 
+      title: 'Sales & Support Playbooks', 
       icon: <AiOutlineBook />, 
-      description:  "Customize workflows with Yugaa AI’s playbooks, built from proven sales and support strategies to optimize customer journeys.",
+      description: "Customize workflows with proven strategies to guide customer journeys.",
       image: "/images/Chat-bot2.gif"
     },
     { 
       title: 'Omnichannel Communication', 
       icon: <AiOutlineLaptop />, 
-      description: "Integrate voice and chat into a cohesive experience, allowing customers to engage across multiple platforms seamlessly.",
+      description: "Unify voice and chat across platforms for a seamless customer experience.",
       image: "/images/Chat-bot2.gif"
     },
+    { heading: 'Analytics and Insights' },
+    { 
+      title: 'Engagement Analytics', 
+      icon: <AiOutlineLaptop />, 
+      description: "Track engagement trends and improve your strategy with in-depth analytics.",
+      image: "/images/Chat-bot2.gif"
+    },
+    { heading: 'Use Cases' },
+    { 
+      title: 'Sales Automation', 
+      icon: <AiOutlinePhone />, 
+      description: "Automate lead engagement, follow-ups, and scheduling to increase conversions.",
+      image: "/images/Chat-bot2.gif"
+    },
+    { 
+      title: '24/7 Customer Support', 
+      icon: <AiOutlineComment />, 
+      description: "Provide continuous support through voice and chat for timely, relevant assistance.",
+      image: "/images/Chat-bot2.gif"
+    }
   ];
 
   const activeFeature = features.find((feature) => feature.title === activeButton);
@@ -51,29 +73,35 @@ function SupportSection() {
         transition={{ duration: 0.8, ease: 'easeOut' }}
         style={styles.headingContainer}
       >
-        <h1 style={styles.heading}>"AI Solutions Tailored for Sales  <br /> and Customer Support</h1>
+        <h1 style={styles.heading}>AI Solutions for Sales <br /> and Customer Support</h1>
         <p style={styles.subheading}>
-        "Yugaa AI offers flexible, intelligent voice and chat agents that automate customer engagement, <br />  enabling you to deliver lifelike, real-time interactions across sales and support channels."
-
+          Yugaa AI’s voice and chat agents enable lifelike,<br /> real-time interactions across your sales and support channels.
         </p>
+        <button style={styles.button}>Explore Product</button>
       </motion.div>
 
       <div style={styles.container}>
         <div style={styles.sidebar}>
-          {features.map((feature) => (
-            <motion.button
-              key={feature.title}
-              onClick={() => setActiveButton(feature.title)}
-              initial={{ opacity: 0, x: -20 }}
-              animate={sectionInView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.5, delay: 0.2 * features.indexOf(feature) }}
-              style={{
-                ...styles.sidebarItem,
-                ...(activeButton === feature.title ? styles.activeSidebarItem : {}),
-              }}
-            >
-              {feature.icon} {feature.title}
-            </motion.button>
+          {features.map((feature, index) => (
+            feature.heading ? (
+              <div key={feature.heading} style={styles.sidebarHeading}>
+                {feature.heading}
+              </div>
+            ) : (
+              <motion.button
+                key={feature.title}
+                onClick={() => setActiveButton(feature.title)}
+                initial={{ opacity: 0, x: -20 }}
+                animate={sectionInView ? { opacity: 1, x: 0 } : {}}
+                transition={{ duration: 0.5, delay: 0.2 * index }}
+                style={{
+                  ...styles.sidebarItem,
+                  ...(activeButton === feature.title ? styles.activeSidebarItem : {}),
+                }}
+              >
+                {feature.icon} {feature.title}
+              </motion.button>
+            )
           ))}
         </div>
 
@@ -98,68 +126,6 @@ function SupportSection() {
           </motion.div>
         </motion.div>
       </div>
-
-      <style>
-        {`
-          @media (max-width: 768px) {
-            .container {
-              flex-direction: column;
-              width: 100%;
-              padding: 0;
-            }
-            .sidebar {
-              display: flex;
-              flex-direction: row;
-              overflow-x: auto;
-              gap: 10px;
-              padding: 10px;
-              margin-bottom: 15px;
-              width: 100%;
-              box-sizing: border-box;
-            }
-            .sidebarItem {
-              font-size: 14px;
-              padding: 8px;
-              min-width: 160px;
-              flex: 1;
-              text-align: center;
-            }
-            .contentPanel {
-              padding: 10px;
-              align-items: center;
-              text-align: center;
-              width: 100%;
-              box-sizing: border-box;
-            }
-            .card {
-              padding: 10px;
-              width: 100%;
-              box-sizing: border-box;
-            }
-            .heading {
-              font-size: 20px;
-            }
-            .subheading {
-              font-size: 14px;
-              padding: 0 10px;
-            }
-            .imageContainer {
-              width: 100%;
-              display: flex;
-              justify-content: center;
-              padding: 10px;
-              box-sizing: border-box;
-            }
-            .image {
-              width: 100%;
-              max-width: 300px;
-              height: auto;
-              border-radius: 8px;
-              object-fit: cover;
-            }
-          }
-        `}
-      </style>
     </section>
   );
 }
@@ -192,6 +158,16 @@ const styles = {
     fontWeight: 'normal',
     textShadow: '0px 2px 4px rgba(0, 0, 0, 0.2)',
   },
+  button: {
+    marginTop: '20px',
+    padding: '10px 20px',
+    fontSize: '16px',
+    borderRadius: '8px',
+    backgroundColor: '#fff',
+    color: 'black',
+    border: 'none',
+    cursor: 'pointer',
+  },
   container: {
     display: 'flex',
     backgroundColor: '#131724',
@@ -204,8 +180,16 @@ const styles = {
     flex: '1',
     display: 'flex',
     flexDirection: 'column',
-    gap: '20px',
+    gap: '10px',
     color: '#9ba3b2',
+  },
+  sidebarHeading: {
+    fontSize: '16px',
+    padding: '10px 0',
+    fontWeight: 'bold',
+    color: '#ffffff',
+    borderBottom: '1px solid #9ba3b2',
+    textTransform: 'uppercase',
   },
   sidebarItem: {
     fontSize: '16px',

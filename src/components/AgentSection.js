@@ -5,7 +5,7 @@ import 'aos/dist/aos.css';
 
 function AgentSection() {
   useEffect(() => {
-    AOS.init({ duration: 1000, once: false }); // Ensure animations replay on each scroll
+    AOS.init({ duration: 1000, once: false });
   }, []);
 
   const solutions = [
@@ -15,9 +15,6 @@ function AgentSection() {
     { title: 'Financial Services', features: ['Secure Transactions', 'AI Financial Assistance'] },
     { title: 'Real Estate', features: ['Property Inquiry Support', 'Automated Scheduling'] },
     { title: 'Hospitality', features: ['Booking Assistance', '24/7 Customer Support'] },
-    { title: 'Retail', features: ['Inventory Management', 'Customer Support'] },
-    { title: 'Logistics', features: ['Supply Chain Optimization', 'Tracking Assistance'] },
-    { title: 'Travel', features: ['Booking Assistance', 'Travel Support'] },
   ];
 
   const styles = {
@@ -51,7 +48,7 @@ function AgentSection() {
     },
     grid: {
       display: 'grid',
-      gridTemplateColumns: 'repeat(3, 1fr)', // 3 columns for desktop
+      gridTemplateColumns: 'repeat(3, 1fr)', // Default 3 columns for desktop
       gap: '20px',
       maxWidth: '1000px',
       margin: '0 auto',
@@ -101,7 +98,7 @@ function AgentSection() {
       <style>
         {`
           /* Mobile Styles */
-          @media (max-width: 768px) {
+          @media (max-width: 600px) {
             .grid-container {
               grid-template-columns: 1fr; /* Single column layout for mobile */
               gap: 15px;
@@ -120,7 +117,7 @@ function AgentSection() {
           }
 
           /* Tablet Styles */
-          @media (min-width: 769px) and (max-width: 1024px) {
+          @media (min-width: 601px) and (max-width: 1024px) {
             .grid-container {
               grid-template-columns: repeat(2, 1fr); /* Two columns for tablets */
               gap: 20px;

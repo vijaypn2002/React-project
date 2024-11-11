@@ -22,19 +22,29 @@ function Navbar() {
         ☰
       </div>
 
+      {/* Navigation Links */}
       <ul className={`navbar-links ${isOpen ? "open" : ""}`}>
         <li>
           <Link to="/">Products</Link>
         </li>
-        <li><Link to="/pricing">Pricing</Link></li>
-        <li><Link to="/integrations">Integrations</Link></li>
+        <li>
+          <Link to="/pricing">Pricing</Link>
+        </li>
+     
+        <li><Link to="/enterprise">Enterprise</Link></li>
+
+       
+        
+        {/* Dropdown Menu for Resources */}
         <li className="dropdown">
-          Resources
+          <span>Resources</span>
           <ul className="dropdown-menu">
-            <li><Link to="/about">About</Link></li>
+            <li><Link to="/about">About Us</Link></li>
             <li><Link to="/contact">Contact</Link></li>
             <li><Link to="/developer">Developer</Link></li>
-            <li><Link to="/integration">Integration</Link></li>
+            <li>
+          <Link to="/integrations">Integrations</Link>
+        </li>
             <li><Link to="/blogs">Blogs</Link></li>
             <li><Link to="/glossary">Glossary</Link></li>
             <li><Link to="/help-center">Help Center</Link></li>
@@ -42,6 +52,7 @@ function Navbar() {
         </li>
       </ul>
       
+      {/* Action Buttons */}
       <div className="navbar-actions">
         <button className="navbar-sign-in">
           <Link to="/signin">Sign In</Link>

@@ -21,16 +21,16 @@ const IntegrationsPage = () => {
     : integrations.filter(integration => integration.category === selectedCategory);
 
   return (
-    <div style={{ fontFamily: 'Arial, sans-serif', backgroundColor: '#f8f9fa', padding: '20px 0', minHeight: '100vh', boxSizing: 'border-box' }}>
+    <div style={{ fontFamily: 'Arial, sans-serif', backgroundColor: '#fff', padding: '20px 0', minHeight: '100vh', boxSizing: 'border-box' }}>
       {/* Hero Section */}
-      <section style={{ textAlign: 'center', padding: '40px 20px', backgroundColor: '#e5e5e5', borderRadius: '10px', marginBottom: '20px', maxWidth: '1200px', margin: 'auto' }}>
+      <section style={{ textAlign: 'center', padding: '40px 20px', backgroundColor: '#fff', borderRadius: '10px', marginBottom: '20px', maxWidth: '1200px', margin: 'auto' }}>
         <h1 style={{ fontSize: '2.2rem', fontWeight: 'bold', color: '#333', marginBottom: '15px', lineHeight: '1.4' }}>
-          Seamlessly Integrate AI Voice <br /> and Chat with Your Tools
+          Effortless Integration with <br /> Your Tools
         </h1>
         <p style={{ fontSize: '1rem', color: '#666', maxWidth: '700px', margin: '0 auto 30px' }}>
-          Connect Yugaa AI’s voice and chat agents to your CRM, helpdesk, and other systems for a unified customer experience.
+          Connect Yugaa AI’s voice and chat agents to your CRM, helpdesk,<br /> and more for a seamless customer experience.
         </p>
-        <p style={{ fontSize: '1rem', fontWeight: 'bold', color: '#ff4081' }}>Integration Options</p>
+        <p style={{ fontSize: '1rem', fontWeight: 'bold', color: '#333' }}>Integration Options</p>
       </section>
 
       <div style={{ display: 'flex', flexWrap: 'wrap', maxWidth: '1200px', margin: '0 auto', padding: '0 20px', gap: '20px', boxSizing: 'border-box' }}>
@@ -57,7 +57,7 @@ const IntegrationsPage = () => {
                   cursor: 'pointer',
                   fontWeight: selectedCategory === category ? 'bold' : 'normal',
                   color: selectedCategory === category ? '#fff' : '#333',
-                  backgroundColor: selectedCategory === category ? '#ff4081' : '#f8f9fa',
+                  backgroundColor: selectedCategory === category ? 'black' : '#f8f9fa',
                   borderRadius: '5px',
                   textAlign: 'center',
                   transition: 'background-color 0.3s',
@@ -91,7 +91,7 @@ const IntegrationsPage = () => {
                 e.currentTarget.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.1)';
               }}
             >
-              <div style={{ fontSize: '40px', marginBottom: '15px', color: '#ff4081' }}>
+              <div style={{ fontSize: '40px', marginBottom: '15px', color: 'black' }}>
                 <FontAwesomeIcon icon={integration.icon} />
               </div>
               <h3 style={{
@@ -105,7 +105,7 @@ const IntegrationsPage = () => {
               <p style={{ color: '#666', fontSize: '14px', marginBottom: '15px' }}>
                 {integration.description}
               </p>
-              <a href="#learn-more" style={{ color: '#ff4081', textDecoration: 'none', fontWeight: 'bold' }}>
+              <a href="#learn-more" style={{ color: 'black', textDecoration: 'none', fontWeight: 'bold' }}>
                 Learn More →
               </a>
             </div>

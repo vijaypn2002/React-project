@@ -18,10 +18,11 @@ function HeroSection() {
     <section className="hero-section">
       <div>
         <h1 className="hero-heading">
-          Deliver Human-Like AI Interactions Across Voice and Chat—Engage, Support, and Convert Seamlessly
+        "Human-Like AI Interactions for Voice & Chat—Engage, Support, and Convert"
         </h1>
         <p className="hero-paragraph">
-          Yugaa AI empowers businesses with lifelike AI voice and chat agents designed to enhance customer engagement, streamline support, and boost sales. Experience intelligent, real-time conversations that adapt to each user’s needs.
+        "Yugaa AI offers lifelike AI voice and chat agents to enhance customer engagement, streamline support, and boost sales. Experience real-time conversations tailored to each user."
+
         </p>
         <div className="hero-buttons">
           <button className="hero-button-primary">

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Footer from './Footer'; // Import the Footer component
+import Footer from './Footer';
 
 const PricingPage = () => {
   const [activeCard, setActiveCard] = useState(null);
@@ -12,16 +12,16 @@ const PricingPage = () => {
     <div style={{ fontFamily: 'Arial, sans-serif', backgroundColor: '#fff', minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
       {/* Hero Section */}
       <section style={{ textAlign: 'center', padding: '40px 20px' }}>
-        <h1 style={{ fontSize: '2.5rem', fontWeight: 'bold', marginBottom: '15px' }}>Flexible Pricing for <br /> AI Voice and Chat Solutions</h1>
+        <h1 style={{ fontSize: '2.5rem', fontWeight: 'bold', marginBottom: '15px', color: 'black' }}>Flexible Pricing for AI Voice & Chat</h1>
         <p style={{ fontSize: '1rem', color: '#555', marginBottom: '20px' }}>
-          Choose the right plan for your business needs, <br />with options for AI voice, chat, or a combination of both.
+          Select the right plan for your business needs, with options for voice, chat, or a combination of both.
         </p>
         <button style={{
-          padding: '10px 20px', fontSize: '1rem', borderRadius: '5px', backgroundColor: '#6c63ff',
+          padding: '10px 20px', fontSize: '1rem', borderRadius: '5px', backgroundColor: 'black',
           color: '#fff', border: 'none', cursor: 'pointer', transition: 'background-color 0.3s ease'
         }}
-        onMouseOver={(e) => e.currentTarget.style.backgroundColor = '#5a53d0'}
-        onMouseOut={(e) => e.currentTarget.style.backgroundColor = '#6c63ff'}>
+        onMouseOver={(e) => e.currentTarget.style.backgroundColor = 'gray'}
+        onMouseOut={(e) => e.currentTarget.style.backgroundColor = 'black'}>
           View Pricing
         </button>
       </section>
@@ -48,26 +48,30 @@ const PricingPage = () => {
           >
             <div>
               <h2 style={{
-                fontSize: '20px', background: 'linear-gradient(45deg, #6c63ff, #a1c4fd)',
-                WebkitBackgroundClip: 'text', color: 'transparent', fontWeight: 'bold', marginBottom: '10px'
+                fontSize: '20px', color: 'black', fontWeight: 'bold', marginBottom: '10px'
               }}>{plan} Plan</h2>
               <p style={{ color: '#666' }}>
-                {plan === "Basic" && "Zero in on your ICP with our rich database of verified B2B contacts."}
-                {plan === "Professional" && "Understand your prospects inside and out with dozens of built-in enrichment sources."}
-                {plan === "Enterprise" && "Our message generation pipeline utilizes the most advanced LLMs for high-quality, human-sounding emails."}
+                {plan === "Basic" && "Ideal for small businesses starting with AI-driven voice or chat."}
+                {plan === "Professional" && "Designed for growing businesses with advanced needs."}
+                {plan === "Enterprise" && "Customized for large enterprises with specific requirements."}
               </p>
               <ul style={{ listStyleType: 'none', padding: 0, color: '#555', marginTop: '15px' }}>
-                {plan === "Basic" && ["✔️ 300M+ high-quality B2B contacts", "✔️ E-commerce data with 60+ relevant filters", "✔️ Local business data with Google reviews", "✔️ Built-in email bounce-testing and validation", "✔️ And more"].map((item, i) => <li key={i}>{item}</li>)}
-                {plan === "Professional" && ["✔️ LinkedIn post scraping", "✔️ X (formerly Twitter) post scraping", "✔️ Fundraising and company news", "✔️ Technographic data", "✔️ Hiring news", "✔️ And more"].map((item, i) => <li key={i}>{item}</li>)}
-                {plan === "Enterprise" && ["✔️ Personalization Waterfall for lead customization", "✔️ 10+ tone of voice options", "✔️ Custom CTAs", "✔️ The best email quality in the industry"].map((item, i) => <li key={i}>{item}</li>)}
+                {plan === "Basic" && ["✔️ Core capabilities", "✔️ Essential analytics", "✔️ Basic support"].map((item, i) => <li key={i}>{item}</li>)}
+                {plan === "Professional" && ["✔️ Enhanced analytics", "✔️ Multichannel support", "✔️ Integrated voice and chat"].map((item, i) => <li key={i}>{item}</li>)}
+                {plan === "Enterprise" && ["✔️ Tailored configurations", "✔️ Dedicated management", "✔️ Priority support"].map((item, i) => <li key={i}>{item}</li>)}
               </ul>
             </div>
+            <p style={{ fontWeight: 'bold', fontSize: '1.2rem', marginTop: '15px', color: '#333' }}>
+              {plan === "Basic" && "Starting at $X/month"}
+              {plan === "Professional" && "Starting at $X/month"}
+              {plan === "Enterprise" && "Contact for Pricing"}
+            </p>
             <button style={{
-              width: '100%', padding: '10px', borderRadius: '5px', backgroundColor: '#6c63ff', color: '#fff',
+              width: '100%', padding: '10px', borderRadius: '5px', backgroundColor: 'black', color: '#fff',
               border: 'none', cursor: 'pointer', marginTop: '15px', transition: 'background-color 0.3s ease'
             }}
-            onMouseOver={(e) => e.currentTarget.style.backgroundColor = '#5a53d0'}
-            onMouseOut={(e) => e.currentTarget.style.backgroundColor = '#6c63ff'}>
+            onMouseOver={(e) => e.currentTarget.style.backgroundColor = 'gray'}
+            onMouseOut={(e) => e.currentTarget.style.backgroundColor = 'black'}>
               Request Pricing
             </button>
           </div>
