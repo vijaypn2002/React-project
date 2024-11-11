@@ -1,0 +1,437 @@
+/* Full background gradient matching the design */
+body, .App {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  width: 100vw;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to bottom, #fff4e0, #ffe8d6, #f6e6e0); /* Adjusted three-tone gradient */
+  color: #333;
+  box-sizing: border-box;
+}
+
+/* Logo Styling */
+.logo-image {
+  width: 50px; /* Adjust width as needed */
+  height: auto; /* Keeps the aspect ratio */
+}
+
+/* Reset default link styling */
+.navbar a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Navbar Styling */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: #ffffff;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+.navbar-logo {
+  font-size: 1.8em;
+  font-weight: 600;
+  color: #333;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* Desktop Navigation Links */
+.navbar-links {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar-links li {
+  color: #333;
+  font-size: 1em;
+  padding: 8px 15px;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.navbar-links li:hover {
+  color: #000;
+  transform: scale(1.05); /* Slight scale effect on hover */
+}
+
+/* Underline Effect on Hover */
+.navbar-links li::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #000;
+  transition: width 0.3s;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.navbar-links li:hover::after {
+  width: 100%; /* Full underline on hover */
+}
+
+/* Navbar Actions */
+.navbar-actions {
+  display: flex;
+  gap: 15px;
+}
+
+.navbar-sign-in {
+  background: none;
+  border: none;
+  color: #333;
+  cursor: pointer;
+  font-size: 0.95em;
+  padding: 8px 15px;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  border-radius: 5px;
+}
+
+.navbar-sign-in:hover {
+  color: #fff;
+  background-color: #333; /* Background change on hover */
+}
+
+/* Get Started Button */
+.navbar-cta {
+  background-color: #1c1c1e;
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.95em;
+  font-weight: 500;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.navbar-cta:hover {
+  background-color: #333;
+  transform: translateY(-3px); /* Lift effect on hover */
+}
+
+/* Dropdown Menu Styles */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #ffffff;
+  color: #222;
+  padding: 10px 0;
+  list-style: none;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  min-width: 200px;
+  border-radius: 8px;
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu li {
+  padding: 10px 20px;
+  white-space: nowrap;
+  font-size: 0.9em;
+  transition: background-color 0.3s ease, padding-left 0.2s ease;
+}
+
+.dropdown-menu li:hover {
+  background-color: #f8f8f8;
+  color: #333;
+  padding-left: 25px; /* Indent effect on hover */
+}
+
+/* Hamburger Icon for Mobile */
+.hamburger {
+  display: none;
+  font-size: 1.5em;
+  cursor: pointer;
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  /* Mobile Navbar Links */
+  .navbar-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background-color: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px 0;
+    gap: 15px;
+    z-index: 999;
+    border-top: 1px solid #e0e0e0;
+  }
+  
+  .navbar-links.open {
+    display: flex;
+  }
+  
+  .hamburger {
+    display: block;
+  }
+
+  .navbar-actions {
+    display: none; /* Hide actions in mobile */
+  }
+
+  .navbar-links li {
+    padding: 10px 20px;
+    font-size: 1em;
+  }
+
+  /* Dropdown Menu for Mobile */
+  .dropdown-menu {
+    position: relative; /* Adjust positioning in mobile view */
+    padding-left: 15px;
+    box-shadow: none;
+    margin-top: 10px;
+  }
+
+  .dropdown-menu li {
+    padding-left: 25px; /* Indent dropdown items slightly */
+  }
+}
+/* Hero Section Styling */
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 80px 20px;
+  background: 
+    radial-gradient(circle at top left, #a6cff1, transparent 50%), 
+    radial-gradient(circle at bottom right, #ffe7d4, transparent 40%), 
+    linear-gradient(to bottom, #ffe7d4, #ffe7d4, #ffe7d4);
+}
+
+.hero-heading {
+  font-size: 3em;
+  font-weight: bold;
+  color: #030101;
+  margin-bottom: 20px;
+  max-width: 800px;
+}
+
+.hero-paragraph {
+  font-size: 1.25em;
+  color: #555;
+  max-width: 700px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+}
+
+.hero-button-primary,
+.hero-button-secondary {
+  padding: 12px 25px;
+  border-radius: 5px;
+  font-size: 1em;
+  transition: all 0.3s ease;
+}
+
+.hero-button-primary {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.hero-button-primary:hover {
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #000;
+}
+
+.hero-button-secondary {
+  border: 1px solid #333;
+  color: #000;
+  cursor: pointer;
+}
+
+.hero-button-secondary:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+/* Hero Image Styling */
+.hero-image {
+  width: 100%;
+  max-width: 500px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  background-color: rgb(250, 245, 245);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sliding-image {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; /* Ensures image fits without cropping */
+  border-radius: 8px;
+  opacity: 1;
+  transition: opacity 0.7s ease-in-out;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 40px 15px;
+  }
+
+  .hero-heading {
+    font-size: 1.8em;
+    max-width: 90%;
+    margin-bottom: 15px;
+  }
+
+  .hero-paragraph {
+    font-size: 1em;
+    max-width: 90%;
+    margin-bottom: 20px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .hero-button-primary,
+  .hero-button-secondary {
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 20px;
+    font-size: 1em;
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Adjust Hero Image for Mobile */
+  .hero-image {
+    max-width: 100%;
+    padding: 20px 0;
+  }
+
+  .sliding-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain; /* Prevents cropping */
+    max-height: 250px; /* Set a reasonable max-height */
+  }
+}
+
+
+/* Features Section */
+.features-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 50px 20px;
+  background: 
+  radial-gradient(circle at top left,  #ffe7d4, transparent 100%), 
+  radial-gradient(circle at bottom right,  #ffe7d4, transparent 80%), 
+  linear-gradient(to bottom, #ffe7d4, #fff5f0, #ffe7d4);
+  box-sizing: border-box;
+}
+
+
+.feature-item {
+  background-color: #ffe5e1;
+  padding: 30px;
+  border-radius: 12px;
+  width: calc(33.33% - 20px); /* Three columns on desktop */
+  max-width: 300px;
+  text-align: left;
+  opacity: 0; /* Start hidden */
+  transform: translateY(20px); /* Start slightly below */
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out, box-shadow 0.3s, transform 0.3s;
+}
+
+.slide-in {
+  opacity: 1;
+  transform: translateY(0); /* Slide up into place */
+}
+
+/* Hover Effect */
+.feature-item:hover {
+  transform: scale(1.05); /* Slightly enlarge */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Shadow effect */
+}
+
+/* Staggered Delays for Each Item */
+.delay-1 {
+  transition-delay: 0.2s;
+}
+.delay-2 {
+  transition-delay: 0.4s;
+}
+.delay-3 {
+  transition-delay: 0.6s;
+}
+.delay-4 {
+  transition-delay: 0.8s;
+}
+.delay-5 {
+  transition-delay: 1s;
+}
+.delay-6 {
+  transition-delay: 1.2s;
+}
+
+/* Icon Styling */
+.feature-icon {
+  font-size: 1.8em;
+  color: #ff7f50;
+  margin-bottom: 15px;
+  display: block;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .feature-item {
+    width: calc(50% - 20px); /* Two columns on tablets */
+  }
+}
+
+@media (max-width: 768px) {
+  .feature-item {
+    width: 100%; /* Single column on mobile */
+    max-width: 100%;
+  }
+}
