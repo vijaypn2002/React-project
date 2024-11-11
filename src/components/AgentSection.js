@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { FaIndustry } from 'react-icons/fa';
+import { FaShoppingCart, FaGraduationCap, FaHeartbeat, FaPiggyBank, FaHome, FaHotel } from 'react-icons/fa';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
@@ -9,19 +9,19 @@ function AgentSection() {
   }, []);
 
   const solutions = [
-    { title: 'E Commerce', features: ['AI-Powered Sales Boost', '24/7 Customer Support'] },
-    { title: 'Education', features: ['AI Enrollment Assistance', 'Student Support'] },
-    { title: 'Healthcare', features: ['Automated Patient Support', 'Medical Information'] },
-    { title: 'Financial Services', features: ['Secure Transactions', 'AI Financial Assistance'] },
-    { title: 'Real Estate', features: ['Property Inquiry Support', 'Automated Scheduling'] },
-    { title: 'Hospitality', features: ['Booking Assistance', '24/7 Customer Support'] },
+    { title: 'E Commerce', features: ['AI-Powered Sales Boost', '24/7 Customer Support'], icon: <FaShoppingCart /> },
+    { title: 'Education', features: ['AI Enrollment Assistance', 'Student Support'], icon: <FaGraduationCap /> },
+    { title: 'Healthcare', features: ['Automated Patient Support', 'Medical Information'], icon: <FaHeartbeat /> },
+    { title: 'Financial Services', features: ['Secure Transactions', 'AI Financial Assistance'], icon: <FaPiggyBank /> },
+    { title: 'Real Estate', features: ['Property Inquiry Support', 'Automated Scheduling'], icon: <FaHome /> },
+    { title: 'Hospitality', features: ['Booking Assistance', '24/7 Customer Support'], icon: <FaHotel /> },
   ];
 
   const styles = {
     section: {
       backgroundColor: '#0b0f29',
       color: '#ffffff',
-      padding: '80px 20px',
+      padding: '60px 20px',
       fontFamily: "'Arial', sans-serif",
       display: 'flex',
       flexDirection: 'column',
@@ -46,12 +46,13 @@ function AgentSection() {
       maxWidth: '90%',
       margin: '0 auto',
     },
-    grid: {
-      display: 'grid',
-      gridTemplateColumns: 'repeat(3, 1fr)', // Default 3 columns for desktop
+    container: {
+      display: 'flex',
+      flexWrap: 'wrap',
+      justifyContent: 'center',
       gap: '20px',
       maxWidth: '1000px',
-      margin: '0 auto',
+      width: '100%',
     },
     card: {
       backgroundColor: '#151A30',
@@ -60,6 +61,9 @@ function AgentSection() {
       textAlign: 'left',
       boxShadow: '0 4px 10px rgba(0, 0, 0, 0.15)',
       border: '1px solid #2D3347',
+      flex: '1 1 calc(33.33% - 20px)', // Default to 3 cards per row on desktop
+      minWidth: '250px', // Minimum width for each card to ensure layout breaks on smaller screens
+      maxWidth: '100%',
     },
     icon: {
       fontSize: '30px',
@@ -94,33 +98,26 @@ function AgentSection() {
 
   return (
     <section style={styles.section}>
-      {/* Internal CSS for responsive styling */}
       <style>
         {`
-          /* Mobile Styles */
+          /* Mobile - single column */
           @media (max-width: 600px) {
-            .grid-container {
-              grid-template-columns: 1fr; /* Single column layout for mobile */
-              gap: 15px;
-            }
-            .heading {
-              font-size: 28px;
-              margin-bottom: 10px;
-            }
-            .subheading {
-              font-size: 14px;
-              margin-bottom: 15px;
-            }
             .card {
-              padding: 15px;
+              flex: 1 1 100%; /* Full width on mobile */
             }
           }
 
-          /* Tablet Styles */
+          /* Tablet - two columns */
           @media (min-width: 601px) and (max-width: 1024px) {
-            .grid-container {
-              grid-template-columns: repeat(2, 1fr); /* Two columns for tablets */
-              gap: 20px;
+            .card {
+              flex: 1 1 calc(50% - 20px); /* Two columns on tablet */
+            }
+          }
+
+          /* Desktop - three columns */
+          @media (min-width: 1025px) {
+            .card {
+              flex: 1 1 calc(33.33% - 20px); /* Three columns on desktop */
             }
           }
         `}
@@ -133,7 +130,7 @@ function AgentSection() {
           automating customer interactions and sales processes.
         </p>
       </div>
-      <div className="grid-container" style={styles.grid}>
+      <div style={styles.container}>
         {solutions.map((solution, index) => (
           <div
             key={index}
@@ -142,7 +139,7 @@ function AgentSection() {
             data-aos="fade-up"
             data-aos-delay={`${index * 100}`}
           >
-            <FaIndustry style={styles.icon} />
+            <div style={styles.icon}>{solution.icon}</div>
             <h3 style={styles.cardTitle}>{solution.title}</h3>
             <ul style={styles.featureList}>
               {solution.features.map((feature, i) => (

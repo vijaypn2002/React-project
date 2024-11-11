@@ -52,7 +52,7 @@ function AboutPage() {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8, ease: "easeOut", delay: 0.8 }}
       >
-        {[
+        {[ 
           { text: "Truly Autonomous: Our agents are designed to operate independently, managing entire customer journeys from start to finish without human intervention." },
           { text: "Multi-Channel Expertise: Yugaa AI agents seamlessly integrate across voice and chat, ensuring customers receive cohesive and consistent support on their preferred channels." },
           { text: "Continuous Learning and Adaptability: Each interaction helps our AI agents grow smarter, learning from past experiences to provide more personalized and efficient responses over time." },
@@ -104,16 +104,10 @@ function AboutPage() {
       {/* Responsive styles */}
       <style>{`
         @media (max-width: 768px) {
-          .container {
-            padding: 20px;
-          }
-          .title {
+          h1, h2 {
             font-size: 1.8rem;
           }
-          .subtitle, .sectionTitle {
-            font-size: 1.2rem;
-          }
-          .paragraph, .listItem {
+          p, li {
             font-size: 0.9rem;
           }
           .callToAction {
@@ -122,13 +116,13 @@ function AboutPage() {
         }
 
         @media (max-width: 480px) {
-          .title {
+          h1 {
             font-size: 1.5rem;
           }
-          .subtitle, .sectionTitle {
-            font-size: 1rem;
+          h2 {
+            font-size: 1.2rem;
           }
-          .paragraph, .listItem {
+          p, li {
             font-size: 0.8rem;
           }
           .callToAction {
@@ -143,8 +137,7 @@ function AboutPage() {
 const styles = {
   container: {
     backgroundColor: "#FFFFFF",
-    padding: "40px 20px",
-    width: "100%", // Make container full width
+    padding: "20px",
     fontFamily: "Arial, sans-serif",
   },
   title: {

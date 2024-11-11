@@ -1,5 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom"; // Import Link for routing
+import { Link } from "react-router-dom"; 
+import { FaInstagram, FaTwitter, FaLinkedin } from 'react-icons/fa';
 
 function Footer() {
   return (
@@ -10,13 +11,13 @@ function Footer() {
           <img src="/images/LOGO.png" alt="Company Logo" style={styles.logo} />
           <div style={styles.socialIcons}>
             <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" style={styles.icon}>
-              <i className="fab fa-instagram"></i>
+              <FaInstagram />
             </a>
             <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer" style={styles.icon}>
-              <i className="fab fa-twitter"></i>
+              <FaTwitter />
             </a>
             <a href="https://www.linkedin.com/company/yugaaai" target="_blank" rel="noopener noreferrer" style={styles.icon}>
-              <i className="fab fa-linkedin"></i>
+              <FaLinkedin />
             </a>
           </div>
         </div>
@@ -35,10 +36,10 @@ function Footer() {
               <Link to="/integrations" style={styles.link}>Integrations</Link>
             </li>
             <li style={styles.linkItem}>
-              <Link to="/#resources" style={styles.link}>Resources</Link> {/* Adjust if Resources has a route */}
+              <Link to="/#resources" style={styles.link}>Resources</Link>
             </li>
             <li style={styles.linkItem}>
-              <Link to="/#contact" style={styles.link}>Contact Us</Link> {/* Adjust if Contact has a route */}
+              <Link to="/#contact" style={styles.link}>Contact Us</Link>
             </li>
           </ul>
         </div>

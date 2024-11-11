@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 function HeroSection() {
   // Array of images for the slider
-  const images = ["/images/Chat-bot2.gif", "/images/Chat-bot3.gif"];
+  const images = ["/images/Chat-bot2.gif",];
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   // useEffect to handle automatic slide transitions

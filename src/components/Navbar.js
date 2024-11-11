@@ -31,7 +31,7 @@ function Navbar() {
           <Link to="/pricing">Pricing</Link>
         </li>
      
-        <li><Link to="/enterprise">Enterprise</Link></li>
+        {/* <li><Link to="/enterprise">Enterprise</Link></li> */}
 
        
         
@@ -41,13 +41,12 @@ function Navbar() {
           <ul className="dropdown-menu">
             <li><Link to="/about">About Us</Link></li>
             <li><Link to="/contact">Contact</Link></li>
-            <li><Link to="/developer">Developer</Link></li>
+            
             <li>
           <Link to="/integrations">Integrations</Link>
         </li>
-            <li><Link to="/blogs">Blogs</Link></li>
-            <li><Link to="/glossary">Glossary</Link></li>
-            <li><Link to="/help-center">Help Center</Link></li>
+            {/* <li><Link to="/blogs">Blogs</Link></li> */}
+            
           </ul>
         </li>
       </ul>
