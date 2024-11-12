@@ -27,7 +27,7 @@ function HeroSection() {
         <div className="hero-buttons">
           <button className="hero-button-primary">
             <i className="fas fa-arrow-right" style={{ marginRight: "8px" }}></i>
-            Get Started with Yuga AI
+            Get Started with Yugaa AI
           </button>
           <button className="hero-button-secondary">
             <i className="fas fa-calendar-alt" style={{ marginRight: "8px" }}></i>

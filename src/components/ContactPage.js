@@ -12,7 +12,7 @@ function ContactPage() {
 
       <main style={styles.content}>
         <div style={styles.contactInfo}>
-          <h3 style={styles.infoTitle}>Yuga AI</h3>
+          <h3 style={styles.infoTitle}>Yugaa AI</h3>
           <p style={styles.infoText}>Reach out to us via phone or email:</p>
           <p style={styles.infoText}>
             <i className="fas fa-phone-alt"></i> (123) 456-7890

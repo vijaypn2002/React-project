@@ -73,9 +73,10 @@ function Footer() {
       {/* Footer Bottom Section */}
       <div style={styles.footerBottom}>
         <hr style={styles.divider} />
-        <p style={styles.footerBottomText}>© 2024 Your Company. All rights reserved.</p>
+        <p style={styles.footerBottomText}>© 2024 Yugaa AI. All rights reserved.</p>
+        <p style={styles.footerBottomText}>A product of QYTHERION TECHNOLOGIES PRIVATE LIMITED.</p>
       </div>
-
+    
       {/* Responsive Styles */}
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@500&display=swap');

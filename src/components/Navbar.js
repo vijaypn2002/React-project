@@ -47,7 +47,7 @@ function Navbar() {
           <Link to="/signin" className="button-link">Sign In</Link>
         </button>
         <button className="navbar-cta">
-          <Link to="/get-started" className="button-link">Get Started with Yuda AI</Link>
+          <Link to="/get-started" className="button-link">Get Started with Yugaa AI</Link>
         </button>
       </div>
     </nav>

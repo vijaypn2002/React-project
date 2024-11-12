@@ -82,8 +82,8 @@ const PricingPage = () => {
               </ul>
             </div>
             <p style={{ fontWeight: 'bold', fontSize: '1.2rem', marginTop: '15px', color: '#333' }}>
-              {plan === "Basic" && "Starting at $X/month"}
-              {plan === "Professional" && "Starting at $X/month"}
+              {plan === "Basic" && "Contact for Pricing"}
+              {plan === "Professional" && "Contact for Pricing"}
               {plan === "Enterprise" && "Contact for Pricing"}
             </p>
             <button style={{
