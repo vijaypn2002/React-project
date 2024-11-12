@@ -8,7 +8,7 @@ function SupportSection() {
   const [activeButton, setActiveButton] = useState('AI Voice Agent for Sales');
   const { ref: sectionRef, inView: sectionInView } = useInView({ triggerOnce: true, threshold: 0.2 });
 
-  // Updated features array with section headings
+  
   const features = [
     { heading: 'Key Product Features' },
     { 

@@ -17,7 +17,7 @@ function BusinessSolutionsSection() {
       }
     };
 
-    const scrollInterval = setInterval(scrollStep, 10); // Adjust speed
+    const scrollInterval = setInterval(scrollStep, 10); 
 
     return () => clearInterval(scrollInterval);
   }, []);
@@ -70,7 +70,7 @@ const styles = {
     scrollBehavior: 'smooth',
     width: '100%',
     padding: '20px 0',
-    scrollbarWidth: 'none', // Hide scrollbar for Firefox
+    scrollbarWidth: 'none', 
   },
   card: {
     background: 'linear-gradient(145deg, #0f1624, #242b49)',
@@ -107,7 +107,7 @@ const styles = {
     fontSize: '14px',
   },
 
-  // Responsive styles for mobile
+
   '@media (max-width: 768px)': {
     section: {
       padding: '20px 10px',

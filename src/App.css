@@ -1,15 +1,14 @@
-/* Full background gradient matching the design */
 body, .App {
   margin: 0;
   padding: 0;
-  overflow-x: hidden; /* Prevent horizontal scrolling */
+  overflow-x: hidden;
   width: 100vw;
   font-family: Arial, sans-serif;
-  background: linear-gradient(to bottom, #fff4e0, #ffe8d6, #f6e6e0); /* Adjusted three-tone gradient */
+  background: linear-gradient(to bottom, #fff4e0, #ffe8d6, #f6e6e0); 
   color: #333;
   box-sizing: border-box;
 }
-/* Import Montserrat Alternates */
+
 @import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@500&display=swap');
 
 .logo-link {
@@ -31,13 +30,13 @@ body, .App {
   text-transform: none; 
 }
 
-/* Reset default link styling */
+
 .navbar a {
   text-decoration: none;
   color: inherit;
 }
 
-/* Navbar Styling */
+/* Navbar Section */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -61,7 +60,7 @@ body, .App {
   text-transform: uppercase;
 }
 
-/* Desktop Navigation Links */
+
 .navbar-links {
   display: flex;
   gap: 25px;
@@ -81,10 +80,10 @@ body, .App {
 
 .navbar-links li:hover {
   color: #000;
-  transform: scale(1.05); /* Slight scale effect on hover */
+  transform: scale(1.05);
 }
 
-/* Underline Effect on Hover */
+
 .navbar-links li::after {
   content: "";
   display: block;
@@ -98,10 +97,10 @@ body, .App {
 }
 
 .navbar-links li:hover::after {
-  width: 100%; /* Full underline on hover */
+  width: 100%;
 }
 
-/* Navbar Actions */
+
 .navbar-actions {
   display: flex;
   gap: 15px;
@@ -120,10 +119,10 @@ body, .App {
 
 .navbar-sign-in:hover {
   color: #fff;
-  background-color: #333; /* Background change on hover */
+  background-color: #333; 
 }
 
-/* Get Started Button */
+
 .navbar-cta {
   background-color: #1c1c1e;
   color: #ffffff;
@@ -138,10 +137,10 @@ body, .App {
 
 .navbar-cta:hover {
   background-color: #333;
-  transform: translateY(-3px); /* Lift effect on hover */
+  transform: translateY(-3px); 
 }
 
-/* Dropdown Menu Styles */
+
 .dropdown-menu {
   display: none;
   position: absolute;
@@ -172,10 +171,10 @@ body, .App {
 .dropdown-menu li:hover {
   background-color: #f8f8f8;
   color: #333;
-  padding-left: 25px; /* Indent effect on hover */
+  padding-left: 25px; 
 }
 
-/* Hamburger Icon for Mobile */
+
 .hamburger {
   display: none;
   font-size: 1.5em;
@@ -184,7 +183,7 @@ body, .App {
 }
 
 @media (max-width: 768px) {
-  /* Mobile Navbar Links */
+ 
   .navbar-links {
     display: none;
     flex-direction: column;
@@ -210,7 +209,7 @@ body, .App {
   }
 
   .navbar-actions {
-    display: none; /* Hide actions in mobile */
+    display: none; 
   }
 
   .navbar-links li {
@@ -218,20 +217,19 @@ body, .App {
     font-size: 1em;
   }
 
-  /* Dropdown Menu for Mobile */
+  
   .dropdown-menu {
-    position: relative; /* Adjust positioning in mobile view */
+    position: relative; 
     padding-left: 15px;
     box-shadow: none;
     margin-top: 10px;
   }
 
   .dropdown-menu li {
-    padding-left: 25px; /* Indent dropdown items slightly */
-  }
+    padding-left: 25px;  }
 }
 
-/* Keyframes for Animations */
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -274,7 +272,7 @@ body, .App {
   }
 }
 
-/* Hero Section Styling with Animations */
+/* Hero Section  */
 .hero-section {
   display: flex;
   flex-direction: column;
@@ -285,7 +283,7 @@ body, .App {
     radial-gradient(circle at top left, #a6cff1, transparent 50%), 
     radial-gradient(circle at bottom right, #ffe7d4, transparent 40%), 
     linear-gradient(to bottom, #ffe7d4, #ffe7d4, #ffe7d4);
-  animation: fadeIn 1s ease-in-out; /* Fade-in effect for Hero Section */
+  animation: fadeIn 1s ease-in-out; 
 }
 
 .hero-heading {
@@ -294,7 +292,7 @@ body, .App {
   color: #030101;
   margin-bottom: 20px;
   max-width: 800px;
-  animation: slideInLeft 1s ease-in-out; /* Slide-in from the left */
+  animation: slideInLeft 1s ease-in-out; 
 }
 
 .hero-paragraph {
@@ -303,7 +301,7 @@ body, .App {
   max-width: 700px;
   line-height: 1.6;
   margin-bottom: 30px;
-  animation: slideInRight 1s ease-in-out; /* Slide-in from the right */
+  animation: slideInRight 1s ease-in-out; 
 }
 
 .hero-buttons {
@@ -312,7 +310,7 @@ body, .App {
   justify-content: center;
   flex-wrap: wrap;
   margin-bottom: 50px;
-  animation: slideInUp 1s ease-in-out; /* Slide-in from below */
+  animation: slideInUp 1s ease-in-out;
 }
 
 .hero-button-primary,
@@ -334,7 +332,7 @@ body, .App {
   background-color: #fff;
   color: #000;
   border: 1px solid #000;
-  transform: scale(1.05); /* Slight scale-up on hover */
+  transform: scale(1.05); 
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
@@ -347,11 +345,11 @@ body, .App {
 .hero-button-secondary:hover {
   background-color: #000;
   color: #fff;
-  transform: scale(1.05); /* Slight scale-up on hover */
+  transform: scale(1.05); 
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Hero Image Styling with Animation */
+
 .hero-image {
   width: 100%;
   max-width: 500px;
@@ -362,8 +360,7 @@ body, .App {
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: fadeIn 1s ease-in-out 0.5s; /* Delayed fade-in for image */
-}
+  animation: fadeIn 1s ease-in-out 0.5s; }
 
 .sliding-image {
   width: auto;
@@ -376,7 +373,7 @@ body, .App {
   transition: opacity 0.7s ease-in-out;
 }
 
-/* Responsive Adjustments */
+
 @media (max-width: 768px) {
   .hero-section {
     padding: 40px 15px;
@@ -432,7 +429,7 @@ body, .App {
 }
 
 
-/* Responsive Adjustments */
+
 @media (max-width: 768px) {
   .hero-section {
     padding: 40px 15px;
@@ -445,14 +442,14 @@ body, .App {
   .hero-heading {
     font-size: 1.8em;
     max-width: 90%;
-    margin: 0 auto 15px auto; /* Centers the heading */
+    margin: 0 auto 15px auto; 
   }
 
   .hero-paragraph {
     font-size: 1em;
     max-width: 90%;
     line-height: 1.5;
-    margin: 0 auto 20px auto; /* Centers the paragraph */
+    margin: 0 auto 20px auto; 
   }
 
   .hero-buttons {
@@ -460,8 +457,7 @@ body, .App {
     gap: 10px;
     width: 100%;
     max-width: 300px;
-    margin: 0 auto; /* Centers the button group */
-  }
+    margin: 0 auto;  }
 
   .hero-button-primary,
   .hero-button-secondary {
@@ -473,18 +469,18 @@ body, .App {
     justify-content: center;
   }
 
-  /* Adjust Hero Image for Mobile */
+ 
   .hero-image {
     max-width: 100%;
-    margin: 20px auto; /* Centers the image */
+    margin: 20px auto; 
     padding: 0;
   }
 
   .sliding-image {
     width: 100%;
     height: auto;
-    object-fit: contain; /* Prevents cropping */
-    max-height: 250px; /* Set a reasonable max-height */
+    object-fit: contain;
+    max-height: 250px; 
   }
 }
 
@@ -492,7 +488,7 @@ body, .App {
 /* Features Section */
 .features-section {
   display: flex;
-  flex-direction: column; /* Keeps the headings and groups separate */
+  flex-direction: column; 
   gap: 40px;
   padding: 50px 20px;
   background: 
@@ -504,12 +500,12 @@ body, .App {
 
 .features-group {
   display: flex;
-  flex-wrap: wrap; /* Allows wrapping on smaller screens */
+  flex-wrap: wrap; 
   justify-content: center;
   gap: 20px;
 }
 
-/* Headings */
+
 .features-section h1 {
   font-size: 1.5em;
   margin: 20px 0 10px;
@@ -522,27 +518,27 @@ body, .App {
   padding: 30px;
   border-radius: 12px;
   border: 1px solid #ffd9d4;
-  width: calc(25% - 20px); /* Four cards per row on large screens */
+  width: calc(25% - 20px); 
   max-width: 250px;
   text-align: left;
-  opacity: 0; /* Start hidden */
-  transform: translateY(20px); /* Start slightly below */
+  opacity: 0; 
+  transform: translateY(20px); 
   transition: opacity 0.6s ease-out, transform 0.6s ease-out, box-shadow 0.3s, transform 0.3s;
   transform-origin: center;
 }
 
 .slide-in {
   opacity: 1;
-  transform: translateY(0); /* Slide up into place */
+  transform: translateY(0); 
 }
 
-/* Hover Effect */
+
 .feature-item:hover {
-  transform: scale(1.05); /* Slightly enlarge */
+  transform: scale(1.05); 
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-/* Staggered Delays for Each Item */
+
 .delay-1 { transition-delay: 0.2s; }
 .delay-2 { transition-delay: 0.4s; }
 .delay-3 { transition-delay: 0.6s; }
@@ -562,16 +558,16 @@ body, .App {
 /* Responsive Adjustments */
 @media (max-width: 1024px) {
   .feature-item {
-    width: calc(50% - 20px); /* Two cards per row on tablets */
+    width: calc(50% - 20px); 
   }
 }
 
 @media (max-width: 768px) {
   .features-group {
-    overflow-x: auto; /* Adds horizontal scroll on mobile */
+    overflow-x: auto; 
   }
   .feature-item {
-    width: 80%; /* Single column on mobile */
+    width: 80%; 
     max-width: 100%;
     flex: 0 0 auto;
   }

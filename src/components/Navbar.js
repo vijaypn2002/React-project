@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import "../App.css"; 
+import "../App.css";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,7 +14,7 @@ function Navbar() {
       <div className="navbar-logo">
         <Link to="/" className="logo-link">
           <img src="/images/LOGO.png" alt="Logo" className="logo-image" />
-          <span className="logo-text">Yugaa AI</span> {/* Add company name */}
+          <span className="logo-text">Yugaa AI</span> {/* Company name */}
         </Link>
       </div>
       
@@ -26,10 +26,13 @@ function Navbar() {
       {/* Navigation Links */}
       <ul className={`navbar-links ${isOpen ? "open" : ""}`}>
         <li>
-          <Link to="/" className="link">Products</Link>
+          <Link to="/" className="link">Home</Link>
         </li>
         <li>
           <Link to="/pricing" className="link">Pricing</Link>
+        </li>
+        <li>
+          <Link to="/support" className="link">Products</Link> {/* Link to Support page */}
         </li>
         <li className="dropdown">
           <span className="link">Resources</span>
@@ -44,7 +47,7 @@ function Navbar() {
       {/* Action Buttons */}
       <div className="navbar-actions">
         <button className="navbar-sign-in">
-          <Link to="/signin" className="button-link">Sign In</Link>
+          {/* <Link to="/signin" className="button-link">Sign In</Link> */}
         </button>
         <button className="navbar-cta">
           <Link to="/get-started" className="button-link">Get Started with Yugaa AI</Link>

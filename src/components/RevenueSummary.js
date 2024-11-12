@@ -1,4 +1,4 @@
-// src/components/RevenueSummary.js
+
 import React from "react";
 
 export default function RevenueSummary({ activityImage, totalRevenueText, revenueChangeText, priceText }) {

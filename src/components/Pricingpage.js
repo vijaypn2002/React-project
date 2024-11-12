@@ -8,7 +8,7 @@ const PricingPage = () => {
     setActiveCard(card);
   };
 
-  // Scroll animation
+ 
   useEffect(() => {
     const handleScroll = () => {
       cardRefs.current.forEach((ref, index) => {

@@ -34,19 +34,22 @@ function App() {
               </>
             }
           />
-          
+
+          {/* Support Page Route */}
+          <Route path="/support" element={<SupportSection />} />
+
           {/* Pricing Page Route */}
           <Route path="/pricing" element={<Pricingpage />} />
-          
+
           {/* Integrations Page Route */}
           <Route path="/integrations" element={<IntegrationsPage />} />
-          
+
           {/* About Us Page Route */}
           <Route path="/about" element={<AboutPage />} />
-          
+
           {/* Enterprise Page Route */}
           <Route path="/enterprise" element={<EnterprisePage />} />
-          
+
           {/* Contact Us Page Route */}
           <Route path="/contact" element={<ContactPage />} />
         </Routes>

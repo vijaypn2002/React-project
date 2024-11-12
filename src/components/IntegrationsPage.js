@@ -41,7 +41,7 @@ const IntegrationsPage = () => {
           boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
           minWidth: '200px',
           flex: '1',
-          maxWidth: '100%', // Full width on smaller screens
+          maxWidth: '100%', 
           marginBottom: '20px',
         }}>
           <h2 style={{ fontSize: '1.25rem', fontWeight: 'bold', marginBottom: '15px', color: '#333', textAlign: 'center' }}>Categories</h2>

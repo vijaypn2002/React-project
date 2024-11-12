@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from "react";
 
 function HeroSection() {
-  // Array of images for the slider
+ 
   const images = ["/images/Chat-bot2.gif",];
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  // useEffect to handle automatic slide transitions
+  
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
     }, 3000);
 
-    return () => clearInterval(interval); // Cleanup on unmount
+    return () => clearInterval(interval); 
   }, [images.length]);
 
   return (

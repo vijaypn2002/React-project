@@ -61,8 +61,8 @@ function AgentSection() {
       textAlign: 'left',
       boxShadow: '0 4px 10px rgba(0, 0, 0, 0.15)',
       border: '1px solid #2D3347',
-      flex: '1 1 calc(33.33% - 20px)', // Default to 3 cards per row on desktop
-      minWidth: '250px', // Minimum width for each card to ensure layout breaks on smaller screens
+      flex: '1 1 calc(33.33% - 20px)', 
+      minWidth: '250px', 
       maxWidth: '100%',
     },
     icon: {
