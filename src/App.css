@@ -12,7 +12,7 @@ body, .App {
 
 /* Logo Styling */
 .logo-image {
-  width: 50px; /* Adjust width as needed */
+  width: 65px; /* Adjust width as needed */
   height: auto; /* Keeps the aspect ratio */
 }
 
@@ -213,7 +213,50 @@ body, .App {
     padding-left: 25px; /* Indent dropdown items slightly */
   }
 }
-/* Hero Section Styling */
+/* Keyframes for Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Hero Section Styling with Animations */
 .hero-section {
   display: flex;
   flex-direction: column;
@@ -224,6 +267,7 @@ body, .App {
     radial-gradient(circle at top left, #a6cff1, transparent 50%), 
     radial-gradient(circle at bottom right, #ffe7d4, transparent 40%), 
     linear-gradient(to bottom, #ffe7d4, #ffe7d4, #ffe7d4);
+  animation: fadeIn 1s ease-in-out; /* Fade-in effect for Hero Section */
 }
 
 .hero-heading {
@@ -232,6 +276,7 @@ body, .App {
   color: #030101;
   margin-bottom: 20px;
   max-width: 800px;
+  animation: slideInLeft 1s ease-in-out; /* Slide-in from the left */
 }
 
 .hero-paragraph {
@@ -240,6 +285,7 @@ body, .App {
   max-width: 700px;
   line-height: 1.6;
   margin-bottom: 30px;
+  animation: slideInRight 1s ease-in-out; /* Slide-in from the right */
 }
 
 .hero-buttons {
@@ -248,6 +294,7 @@ body, .App {
   justify-content: center;
   flex-wrap: wrap;
   margin-bottom: 50px;
+  animation: slideInUp 1s ease-in-out; /* Slide-in from below */
 }
 
 .hero-button-primary,
@@ -269,6 +316,8 @@ body, .App {
   background-color: #fff;
   color: #000;
   border: 1px solid #000;
+  transform: scale(1.05); /* Slight scale-up on hover */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .hero-button-secondary {
@@ -280,9 +329,11 @@ body, .App {
 .hero-button-secondary:hover {
   background-color: #000;
   color: #fff;
+  transform: scale(1.05); /* Slight scale-up on hover */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Hero Image Styling */
+/* Hero Image Styling with Animation */
 .hero-image {
   width: 100%;
   max-width: 500px;
@@ -293,6 +344,7 @@ body, .App {
   display: flex;
   justify-content: center;
   align-items: center;
+  animation: fadeIn 1s ease-in-out 0.5s; /* Delayed fade-in for image */
 }
 
 .sliding-image {
@@ -300,7 +352,7 @@ body, .App {
   height: auto;
   max-width: 100%;
   max-height: 100%;
-  object-fit: contain; /* Ensures image fits without cropping */
+  object-fit: contain;
   border-radius: 8px;
   opacity: 1;
   transition: opacity 0.7s ease-in-out;
@@ -315,13 +367,16 @@ body, .App {
   .hero-heading {
     font-size: 1.8em;
     max-width: 90%;
-    margin-bottom: 15px;
+    margin: 0 auto 15px auto;
+    animation: slideInLeft 1s ease-in-out;
   }
 
   .hero-paragraph {
     font-size: 1em;
     max-width: 90%;
-    margin-bottom: 20px;
+    line-height: 1.5;
+    margin: 0 auto 20px auto;
+    animation: slideInRight 1s ease-in-out;
   }
 
   .hero-buttons {
@@ -329,6 +384,65 @@ body, .App {
     gap: 10px;
     width: 100%;
     max-width: 300px;
+    margin: 0 auto;
+    animation: slideInUp 1s ease-in-out;
+  }
+
+  .hero-button-primary,
+  .hero-button-secondary {
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 20px;
+    font-size: 1em;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero-image {
+    max-width: 100%;
+    margin: 20px auto;
+    padding: 0;
+    animation: fadeIn 1s ease-in-out 0.5s;
+  }
+
+  .sliding-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    max-height: 250px;
+  }
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 40px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-heading {
+    font-size: 1.8em;
+    max-width: 90%;
+    margin: 0 auto 15px auto; /* Centers the heading */
+  }
+
+  .hero-paragraph {
+    font-size: 1em;
+    max-width: 90%;
+    line-height: 1.5;
+    margin: 0 auto 20px auto; /* Centers the paragraph */
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto; /* Centers the button group */
   }
 
   .hero-button-primary,
@@ -344,7 +458,8 @@ body, .App {
   /* Adjust Hero Image for Mobile */
   .hero-image {
     max-width: 100%;
-    padding: 20px 0;
+    margin: 20px auto; /* Centers the image */
+    padding: 0;
   }
 
   .sliding-image {
@@ -354,6 +469,7 @@ body, .App {
     max-height: 250px; /* Set a reasonable max-height */
   }
 }
+
 
 /* Features Section */
 .features-section {

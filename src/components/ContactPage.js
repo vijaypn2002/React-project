@@ -1,5 +1,4 @@
 import React from "react";
-import Footer from "./Footer";
 
 function ContactPage() {
   return (
@@ -47,54 +46,45 @@ function ContactPage() {
         </form>
       </main>
 
-      <Footer />
-
-      {/* Responsive styles */}
       <style>
         {`
           @media (max-width: 768px) {
-            .formContainer {
-              flex-direction: column;
-              align-items: center;
-              padding: 20px;
-              text-align: center;
+            .contactInfo, .form {
+              width: 70%; /* Reduced width for medium screens */
+              margin: 0 auto;
+              padding: 0;
             }
             h1 {
-              font-size: 2rem;
+              font-size: 1.8rem;
             }
-            .subtitle {
-              font-size: 0.9rem;
-              text-align: center;
+            .subtitle, .infoText {
+              font-size: 1rem;
             }
             .infoTitle {
-              font-size: 1.2rem;
-            }
-            .input, .textarea, .submitButton {
-              font-size: 0.9rem;
-              padding: 10px;
-              width: 100%;
+              font-size: 1.4rem;
             }
           }
 
           @media (max-width: 480px) {
             h1 {
-              font-size: 1.8rem;
+              font-size: 1.6rem;
             }
-            .subtitle {
-              font-size: 0.8rem;
-              text-align: center;
+            .subtitle, .infoText {
+              font-size: 0.85rem;
             }
             .infoTitle {
-              font-size: 1.1rem;
+              font-size: 1.2rem;
             }
-            .input, .textarea {
-              font-size: 0.8rem;
-              padding: 8px;
+            .form {
+              width: 80%; /* Reduced width for small screens */
+              padding: 0;
+              gap: 8px;
             }
-            .submitButton {
-              font-size: 0.8rem;
+            .input, .textarea, .submitButton {
+              font-size: 0.85rem;
               padding: 10px;
               width: 100%;
+              box-sizing: border-box;
             }
           }
         `}
@@ -108,43 +98,45 @@ const styles = {
     backgroundColor: "#FFFFFF",
     fontFamily: "Arial, sans-serif",
     width: "100%",
-    padding: "20px",
+    padding: "10px 0",
   },
   header: {
     textAlign: "center",
-    padding: "20px 10px",
+    padding: "15px 10px",
     backgroundColor: "#f8f9fa",
   },
   title: {
-    fontSize: "2.5rem",
+    fontSize: "2rem",
     fontWeight: "bold",
     color: "#333",
   },
   subtitle: {
-    fontSize: "1rem",
+    fontSize: "0.9rem",
     color: "#666",
-    marginTop: "10px",
+    marginTop: "8px",
   },
   content: {
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    gap: "20px",
-    padding: "20px",
+    gap: "15px",
+    padding: "10px",
   },
   contactInfo: {
     textAlign: "center",
     color: "#333",
+    width: "100%",
+    maxWidth: "500px",
   },
   infoTitle: {
-    fontSize: "1.5rem",
+    fontSize: "1.3rem",
     fontWeight: "bold",
-    marginBottom: "10px",
+    marginBottom: "8px",
   },
   infoText: {
-    fontSize: "1rem",
+    fontSize: "0.9rem",
     color: "#666",
-    margin: "5px 0",
+    margin: "4px 0",
   },
   link: {
     color: "#333",
@@ -153,20 +145,22 @@ const styles = {
   socialIcons: {
     display: "flex",
     justifyContent: "center",
-    gap: "10px",
-    marginTop: "10px",
+    gap: "8px",
+    marginTop: "8px",
   },
   icon: {
-    fontSize: "20px",
+    fontSize: "18px",
     color: "#333",
     cursor: "pointer",
   },
   form: {
     display: "flex",
     flexDirection: "column",
-    gap: "15px",
+    gap: "10px",
     width: "100%",
-    maxWidth: "500px",
+    maxWidth: "450px",
+    margin: "0 auto",
+    padding: "0",
   },
   input: {
     padding: "10px",
@@ -174,18 +168,20 @@ const styles = {
     border: "1px solid #ddd",
     borderRadius: "5px",
     width: "100%",
+    boxSizing: "border-box",
   },
   textarea: {
     padding: "10px",
     fontSize: "1rem",
     border: "1px solid #ddd",
     borderRadius: "5px",
-    height: "120px",
+    height: "100px",
     resize: "vertical",
     width: "100%",
+    boxSizing: "border-box",
   },
   submitButton: {
-    padding: "12px 20px",
+    padding: "10px 15px",
     fontSize: "1rem",
     borderRadius: "5px",
     backgroundColor: "black",

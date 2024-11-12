@@ -7,18 +7,19 @@ import FeaturesSection from "./components/FeaturesSection";
 import SupportSection from "./components/SupportSection";
 import SolutionSection from "./components/SolutionSection";
 import AgentSection from "./components/AgentSection";
-import Footer from "./components/Footer";
-import PricingPage from "./components/Pricingpage";
+import Footer from "./components/Footer"; // Import Footer
+import Pricingpage from "./components/Pricingpage";
 import IntegrationsPage from "./components/IntegrationsPage";
 import AboutPage from "./components/AboutPage";
 import EnterprisePage from "./components/EnterprisePage";
-import ContactPage from "./components/ContactPage"; // Import ContactPage
+import ContactPage from "./components/ContactPage";
 
 function App() {
   return (
     <Router>
       <div className="App">
-        <Navbar /> {/* Only one Navbar here */}
+        <Navbar />
+
         <Routes>
           {/* Main Home Route with all sections */}
           <Route
@@ -30,21 +31,28 @@ function App() {
                 <SupportSection />
                 <SolutionSection />
                 <AgentSection />
-                <Footer />
               </>
             }
           />
-          {/* Pricing Route */}
-          <Route path="/pricing" element={<PricingPage />} />
-          {/* Integrations Route */}
+          
+          {/* Pricing Page Route */}
+          <Route path="/pricing" element={<Pricingpage />} />
+          
+          {/* Integrations Page Route */}
           <Route path="/integrations" element={<IntegrationsPage />} />
-          {/* About Us Route */}
+          
+          {/* About Us Page Route */}
           <Route path="/about" element={<AboutPage />} />
-          {/* Enterprise Route */}
+          
+          {/* Enterprise Page Route */}
           <Route path="/enterprise" element={<EnterprisePage />} />
-          {/* Contact Us Route */}
+          
+          {/* Contact Us Page Route */}
           <Route path="/contact" element={<ContactPage />} />
         </Routes>
+
+        {/* Footer rendered once for all routes */}
+        <Footer />
       </div>
     </Router>
   );

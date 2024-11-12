@@ -1,26 +1,25 @@
 import React from "react";
 import { motion } from "framer-motion";
-import Footer from "./Footer"; // Import the Footer component
 
 function AboutPage() {
   return (
     <div style={styles.container}>
-      {/* Title with animation */}
+      {/* Title with fade-in animation */}
       <motion.h1 
         style={styles.title} 
-        initial={{ opacity: 0, y: -50 }}
+        initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
       >
         About Us
       </motion.h1>
 
-      {/* Subtitle with animation */}
+      {/* Subtitle with a subtle fade-in animation */}
       <motion.p 
         style={styles.subtitle} 
-        initial={{ opacity: 0, y: 50 }}
+        initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+        transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
       >
         Empowering Businesses with Autonomous AI Agents
       </motion.p>
@@ -28,19 +27,19 @@ function AboutPage() {
       {/* Animated Paragraphs */}
       <motion.p 
         style={styles.paragraph} 
-        initial={{ opacity: 0, x: -50 }}
+        initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
+        transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
       >
         At Yugaa AI, we’re building the future of intelligent automation. We develop autonomous AI agents that work independently, handling complex sales and customer service tasks across voice and chat. Our agents don’t just assist—they actively engage, support, and drive results around the clock.
       </motion.p>
 
-      {/* Section Title with animation */}
+      {/* Section Title with a simple fade-in */}
       <motion.h2 
         style={styles.sectionTitle}
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.8, ease: "easeOut", delay: 0.6 }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.6, ease: "easeOut", delay: 0.6 }}
       >
         What Makes Us Different?
       </motion.h2>
@@ -48,9 +47,12 @@ function AboutPage() {
       {/* Animated List Items */}
       <motion.ul 
         style={styles.list}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.8, ease: "easeOut", delay: 0.8 }}
+        initial="hidden"
+        animate="visible"
+        variants={{
+          hidden: { opacity: 0 },
+          visible: { opacity: 1, transition: { staggerChildren: 0.2, delay: 0.8 } }
+        }}
       >
         {[ 
           { text: "Truly Autonomous: Our agents are designed to operate independently, managing entire customer journeys from start to finish without human intervention." },
@@ -60,9 +62,9 @@ function AboutPage() {
         ].map((item, index) => (
           <motion.li
             key={index}
-            initial={{ opacity: 0, x: -20 }}
+            initial={{ opacity: 0, x: -10 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 * index }}
+            transition={{ duration: 0.5, ease: "easeOut", delay: 0.2 * index }}
             style={styles.listItem}
           >
             {item.text}
@@ -73,17 +75,17 @@ function AboutPage() {
       {/* Vision Section */}
       <motion.h2 
         style={styles.sectionTitle}
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.8, ease: "easeOut", delay: 1.4 }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.6, ease: "easeOut", delay: 1.2 }}
       >
         Our Vision for the Future
       </motion.h2>
       <motion.p 
         style={styles.paragraph}
-        initial={{ opacity: 0, x: 50 }}
+        initial={{ opacity: 0, x: 20 }}
         animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut", delay: 1.6 }}
+        transition={{ duration: 0.6, ease: "easeOut", delay: 1.4 }}
       >
         Yugaa AI is just getting started. While our first generation of AI agents is focused on sales and customer service, our vision is to expand into a full suite of autonomous agents that support various business functions. We envision a world where AI not only assists but actively works across different tasks, helping businesses optimize operations and deliver superior customer experiences.
       </motion.p>
@@ -91,16 +93,13 @@ function AboutPage() {
       {/* Call-to-Action Section */}
       <motion.p 
         style={styles.callToAction}
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.8, ease: "easeOut", delay: 2 }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.6, ease: "easeOut", delay: 1.8 }}
       >
         Ready to see the future of AI? <a href="#get-started" style={styles.link}>Get Started with Yugaa AI</a>
       </motion.p>
 
-      {/* Footer */}
-      <Footer />
-      
       {/* Responsive styles */}
       <style>{`
         @media (max-width: 768px) {

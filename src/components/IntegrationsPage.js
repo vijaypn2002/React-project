@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChartLine, faShoppingCart, faHeadset } from '@fortawesome/free-solid-svg-icons';
-import Footer from './Footer';
 
 const IntegrationsPage = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
@@ -111,11 +110,6 @@ const IntegrationsPage = () => {
             </div>
           ))}
         </section>
-      </div>
-
-      {/* Footer Section */}
-      <div style={{ marginTop: '40px', width: '100vw', marginLeft: 'calc(-50vw + 50%)', boxSizing: 'border-box' }}>
-        <Footer />
       </div>
 
       {/* Responsive CSS */}
