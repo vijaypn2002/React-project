@@ -30,7 +30,7 @@ function App() {
                 <FeaturesSection />
                 <SupportSection />
                 <SolutionSection />
-                <AgentSection />
+                {/* <AgentSection /> */}
               </>
             }
           />

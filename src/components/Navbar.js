@@ -12,8 +12,9 @@ function Navbar() {
   return (
     <nav className="navbar">
       <div className="navbar-logo">
-        <Link to="/">
-          <img src="/images/LOGO.png" alt="Logo" className="logo-image" /> {/* Logo image */}
+        <Link to="/" className="logo-link">
+          <img src="/images/LOGO.png" alt="Logo" className="logo-image" />
+          <span className="logo-text">Yugaa AI</span> {/* Add company name */}
         </Link>
       </div>
       
@@ -25,28 +26,17 @@ function Navbar() {
       {/* Navigation Links */}
       <ul className={`navbar-links ${isOpen ? "open" : ""}`}>
         <li>
-          <Link to="/">Products</Link>
+          <Link to="/" className="link">Products</Link>
         </li>
         <li>
-          <Link to="/pricing">Pricing</Link>
+          <Link to="/pricing" className="link">Pricing</Link>
         </li>
-     
-        {/* <li><Link to="/enterprise">Enterprise</Link></li> */}
-
-       
-        
-        {/* Dropdown Menu for Resources */}
         <li className="dropdown">
-          <span>Resources</span>
+          <span className="link">Resources</span>
           <ul className="dropdown-menu">
-            <li><Link to="/about">About Us</Link></li>
-            <li><Link to="/contact">Contact</Link></li>
-            
-            <li>
-          <Link to="/integrations">Integrations</Link>
-        </li>
-            {/* <li><Link to="/blogs">Blogs</Link></li> */}
-            
+            <li><Link to="/about" className="dropdown-link">About Us</Link></li>
+            <li><Link to="/contact" className="dropdown-link">Contact</Link></li>
+            <li><Link to="/integrations" className="dropdown-link">Integrations</Link></li>
           </ul>
         </li>
       </ul>
@@ -54,10 +44,10 @@ function Navbar() {
       {/* Action Buttons */}
       <div className="navbar-actions">
         <button className="navbar-sign-in">
-          <Link to="/signin">Sign In</Link>
+          <Link to="/signin" className="button-link">Sign In</Link>
         </button>
         <button className="navbar-cta">
-          <Link to="/get-started">Get Started with Yuga AI</Link>
+          <Link to="/get-started" className="button-link">Get Started with Yuda AI</Link>
         </button>
       </div>
     </nav>

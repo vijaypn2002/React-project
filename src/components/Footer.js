@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom"; 
 import { FaInstagram, FaTwitter, FaLinkedin } from 'react-icons/fa';
 
 function Footer() {
+  const [showResources, setShowResources] = useState(false);
+
+  const toggleResources = () => {
+    setShowResources(!showResources);
+  };
+
   return (
     <div style={styles.footerContainer}>
       <div style={styles.footerContent}>
@@ -10,6 +16,7 @@ function Footer() {
         {/* Logo Section */}
         <div style={styles.logoSection}>
           <img src="/images/LOGO.png" alt="Company Logo" style={styles.logo} />
+          <span style={styles.logoText}>Yugaa AI</span>
         </div>
 
         {/* Social Media Icons Section */}
@@ -37,11 +44,27 @@ function Footer() {
             <li style={styles.linkItem}>
               <Link to="/integrations" style={styles.link}>Integrations</Link>
             </li>
-            <li style={styles.linkItem}>
-              <Link to="/#resources" style={styles.link}>Resources</Link>
-            </li>
-            <li style={styles.linkItem}>
-            <Link to="/contact"style={styles.link}>Contact</Link>
+            <li style={styles.linkItem} onClick={toggleResources}>
+              <span style={{ ...styles.link, cursor: "pointer" }}>Resources</span>
+              <div
+                style={{
+                  ...styles.dropdown,
+                  maxHeight: showResources ? "200px" : "0",
+                  opacity: showResources ? "1" : "0",
+                }}
+              >
+                <ul style={styles.dropdownList}>
+                  <li>
+                    <Link to="/about" style={styles.dropdownLink}>About Us</Link>
+                  </li>
+                  <li>
+                    <Link to="/contact" style={styles.dropdownLink}>Contact</Link>
+                  </li>
+                  <li>
+                    <Link to="/integrations" style={styles.dropdownLink}>Integrations</Link>
+                  </li>
+                </ul>
+              </div>
             </li>
           </ul>
         </div>
@@ -55,6 +78,8 @@ function Footer() {
 
       {/* Responsive Styles */}
       <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@500&display=swap');
+
         @media (max-width: 768px) {
           .footerContent {
             flex-direction: column;
@@ -111,11 +136,19 @@ const styles = {
     textAlign: "center",
   },
   logoSection: {
+    display: "flex",
+    alignItems: "center",
     marginBottom: "10px",
   },
   logo: {
     width: "40px",
     height: "auto",
+    marginRight: "10px",
+  },
+  logoText: {
+    fontFamily: "'Montserrat', sans-serif",
+    fontSize: "18px",
+    color: "#FFFFFF",
   },
   socialIcons: {
     display: "flex",
@@ -126,6 +159,7 @@ const styles = {
     fontSize: "20px",
     color: "#FFFFFF",
     textDecoration: "none",
+    transition: "color 0.3s",
   },
   linksSection: {
     display: "flex",
@@ -144,11 +178,41 @@ const styles = {
   },
   linkItem: {
     margin: "0",
+    position: "relative",
   },
   link: {
     color: "#FFFFFF",
     textDecoration: "none",
     fontSize: "14px",
+    transition: "color 0.3s",
+  },
+  dropdown: {
+    position: "absolute",
+    top: "100%",
+    left: "0",
+    backgroundColor: "#1A1A3A",
+    padding: "10px 15px",
+    borderRadius: "5px",
+    boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.2)",
+    overflow: "hidden",
+    transition: "max-height 0.3s ease, opacity 0.3s ease",
+    maxHeight: "0",
+    opacity: "0",
+  },
+  dropdownList: {
+    listStyleType: "none",
+    padding: "0",
+    margin: "0",
+    display: "flex",
+    flexDirection: "column",
+    gap: "5px",
+  },
+  dropdownLink: {
+    color: "#FFFFFF",
+    textDecoration: "none",
+    fontSize: "13px",
+    padding: "5px 0",
+    transition: "color 0.3s",
   },
   footerBottom: {
     marginTop: "10px",
